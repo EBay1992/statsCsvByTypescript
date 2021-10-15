@@ -11,7 +11,7 @@ export interface OutputTarget {
 }
 
 export class Summary {
-  constructor(public analyzer: Analyzer, public OutputTarget: OutputTarget) {}
+  constructor(public analyzer: Analyzer, public outputTarget: OutputTarget) {}
 
   static WinsAnalyzerWithHtmlReport(
     team: string,
@@ -21,6 +21,6 @@ export class Summary {
   }
   buildAndPrint(matches: MatchData[]): void {
     const output = this.analyzer.run(matches);
-    this.OutputTarget.print(output);
+    this.outputTarget.print(output);
   }
 }
